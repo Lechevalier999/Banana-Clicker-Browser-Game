@@ -29,32 +29,19 @@
     counterDisplay.style.fontSize = "24px";
     counterDisplay.style.textAlign = "center";
 
-const base64Audio = "data:audio/wav;base64,UklGRiIAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQAAAAA=";
-
-const clickSound = new Audio(base64Audio);
-clickSound.volume = 0.5; // Optional: Set volume
-
-document.addEventListener("keydown", (event) => {
-    if (event.code === "Space") {
-        event.preventDefault();
-        clickSound.currentTime = 0; // Reset to the beginning
-        clickSound.play().catch((error) => {
-            console.error("Audio playback failed:", error);
-        });
-    }
-});
-
     document.addEventListener("keydown", (event) => {
-        if (event.code === "Space") { 
-            event.preventDefault(); 
+        if (event.code === "Space") { // Check if the pressed key is the spacebar
+            event.preventDefault(); // Prevent scrolling when spacebar is pressed
             clickCount++;
             counterText.nodeValue = `Clicks: ${clickCount}`;
         }
     });
 
+    // Add the banana, instruction, and counter display to the container
     container.appendChild(banana);
     container.appendChild(instruction);
     container.appendChild(counterDisplay);
 
+    // Add the container to the body
     document.body.appendChild(container);
 })();
