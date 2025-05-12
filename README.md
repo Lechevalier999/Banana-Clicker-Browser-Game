@@ -5,5 +5,3 @@ It's just a game about clicking a banana and getting banana points to upgrade yo
 
 # Rules
 Click banana
-Get banana points
-Upgrade banana
